@@ -1,0 +1,66 @@
+
+body {
+    background-color: black;
+}
+
+header {
+    color: purple;
+    font-size: 100px;
+    text-align: center;
+    border: 5px solid white;
+    border-radius: 50px;
+}
+
+#flex {
+    display: flex;
+    justify-content: space-evenly;
+        
+}
+
+form {
+    color: silver;
+    font-size: 30px;
+}
+
+span {
+    color: whitesmoke;
+}
+
+h1 {
+    border: 5px solid gold;
+    border-radius: 20px;
+}
+
+#addition {
+    background-color: grey;
+    margin: 50px;
+    padding: 50px;
+    display: center;
+    text-align: center;
+    border: 5px solid whitesmoke;
+    border-radius: 25px;
+    
+}
+
+#subtraction {
+    background-color: grey;
+    margin: 50px;
+    padding: 50px;
+    display: center;
+    text-align: center;
+    border: 5px solid whitesmoke;
+    border-radius: 25px;
+}
+
+
+#multiplication {
+    background-color: grey;
+    margin: 50px;
+    padding: 50px;
+    display: center;
+    text-align: center;
+    border:  5px solid whitesmoke;
+    border-radius: 25px;
+}
+
+

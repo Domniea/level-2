@@ -1,0 +1,130 @@
+body {
+    background-image: url(castle.jpg);
+}
+
+header {
+    font-size: 50px;
+    background-color: grey;
+    opacity: .9;
+    text-align: center;
+    margin: 50px;
+    padding: 15px;
+    margin-left: 500px;
+    margin-right: 500px;
+    border: blue 2px solid;
+}
+
+#cheepCheep {
+    height: 356;
+    width: 300px;
+}
+#goombas {
+    height: 356;
+    width: 300px;
+}
+#bombOmbs {
+    height: 356;
+    width: 300px;
+}
+
+ul {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: auto;
+    font-size: 30px;
+    background-color: gray;
+    margin: 25px;
+    padding: 25px;
+    opacity: .9;
+    border: blue 2px solid;
+}
+
+input {
+    height: 30px;
+    width: 50px;
+}
+
+li {
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    
+}
+
+img {
+    margin: 30px;
+}
+li:nth-child(1) {
+    border: 5px dashed black;
+
+}
+
+li:nth-child(2) {
+    border: 5px dashed black;
+}
+
+li:nth-child(3) {
+    border: 5px dashed black;
+}
+
+#flex1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+#flex2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#flex3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: grey;
+    margin-top: 40px;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding: 15px;
+    font-size: 25px;
+    opacity: .9;
+    border: blue 2px solid;
+}
+
+#buttonBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: auto;
+    font-size: 30px;
+    background-color: gray;
+    margin: -10px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 25px;
+    opacity: .9;
+    color: white;
+    border: blue 2px solid;
+}
+
+button {
+    height: 50px;
+    font-size: 30px;
+}
+p {
+    margin: 1px;
+}

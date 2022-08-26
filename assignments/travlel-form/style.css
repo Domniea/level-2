@@ -1,0 +1,14 @@
+Body {
+    background-color: grey;
+    color: white;
+}
+
+form {
+    padding: 15px;
+    margin: 15px;
+}
+
+li {
+    padding: 5px;
+    margin: 15px;
+}

@@ -1,21 +1,24 @@
-var display = document.getElementById('time-display');
+nums = [3, 6, 8, 2]
 
-        function getTime(){
-            var now = new Date();
-            var hour = now.getHours();
-            var min = now.getMinutes();
-            var sec = now.getSeconds();
-            if(hour < 10){
-                hour = `0${hour}`;
-            }
-            if(min < 10){
-                min = `0${min}`;
-            }
-            if(sec < 10){
-                sec = `0${sec}`;
-            }
-            display.textContent = `${hour}:${min}:${sec}`}
-            
+function highFive(arr){
+    let result = arr.filter(i => i > 5)
+    return result
+}
 
+// console.log(highFive(nums))
 
-        setInterval(getTime, 1000)
+function evens(arr){
+    let even = arr.filter(x => x % 2 === 0)
+    return even
+}
+
+// console.log(evens(nums))
+
+strings = ["dog", "wolf", "by", "family", "eaten", "camping"]
+
+function fiveOrLess(arr){
+    let result = arr.filter(x => x.length < 5)
+    return result
+}
+
+// console.log(fiveOrLess(strings))

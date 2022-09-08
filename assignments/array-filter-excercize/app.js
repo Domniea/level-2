@@ -7,7 +7,7 @@
 
 numbers = [3, 6, 8, 2]
 function fiveAndGreaterOnly(array) {
-    let result = array.filter(x => x >= 5)
+    let result = array.filter(x => x > 5)
     return result
 }
 console.log(fiveAndGreaterOnly([...numbers]))

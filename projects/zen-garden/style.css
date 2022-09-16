@@ -1,64 +1,89 @@
+@font-face {
+    font-family: julius_sans_one;
+    src: url(JuliusSansOne-Regular.ttf);
+}
+
 #gridContainer {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
 
 #headerLeft {
-    background-color: blue;
-    grid-column: 1 / 5;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
     height: 300px;
+    font-family: julius_sans_one;
+    color: white;
+    background-image: url(contours@2x.png), url(huntington.jpg);
+    background-size: 100% auto;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #headerRight{
-    background-color: green;
+    background-color: #ffffff1A;
     grid-column: 5 / 7;
+    grid-row: 1 / 2;
+    z-index: 20;
     height: 300px;
+    font-family: julius_sans_one;
+    color: #ffffffA6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #mainTop {
-    background-color: orange;
+    background-color: white;
     grid-column: 1 / 5;
-    grid-row: 2 / 3;
+    grid-row: 2 ;
     height: 900px;
 }
 
 #mainMiddle {
-    background-color: red;
-    grid-column: 1 / 5;
+    background-color: #8ABC9F80;
+    grid-column: 1 / -1;
     grid-row: 3 / 4;
+    z-index: 4;
     height: 685px;
+    background-image: url(bamboo.png);
+    background-attachment: fixed;
 }
 
 #mainBottom {
-    background-color: brown;
+    background-color: white;
     grid-column: 1 / 5;
     grid-row: 4 / 5;
     height: 725px;
 }
 
 #navTop {
-    background-color: purple;
+    background-color: #edf4f0;
     grid-column: 5 / 7;
     grid-row: 2 / 3;
     height: 900px;
 }
 
 #navMiddle {
-    background-color: grey;
+    background-color: #e5ede8;
     grid-column: 5 / 7;
     grid-row: 3 / 4;
     height: 685px;
 }
 
 #navBottom {
-    background-color: aquamarine;
+    background-color: #edf4f0;
     grid-column: 5 / 7;
     grid-row: 4/ 5;
     height: 725px;
 }
 
 #footerTop {
-    background-color: chartreuse;
+    background-image: url(contours@2x.png), url(koi.jpg);
+    background-size: 100% auto;
     grid-column: 1 / -1;
     height: 300px;
 }

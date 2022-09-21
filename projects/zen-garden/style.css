@@ -1,6 +1,18 @@
+body {
+    font-size: 100%;
+    font-family: libre_baskerville_reg;
+    color: #325050;
+    margin: 0;
+}
+
 @font-face {
     font-family: julius_sans_one;
     src: url(JuliusSansOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: libre_baskerville_reg;
+    src: url(LibreBaskerville-Regular.ttf);
 }
 
 #gridContainer {
@@ -14,12 +26,17 @@
     height: 300px;
     font-family: julius_sans_one;
     color: white;
-    background-image: url(contours@2x.png), url(huntington.jpg);
-    background-size: 100% auto;
-   
+
+    background-image: url(contours-opaque.png), url(noise.png), url(gridlines.png), url(huntington.jpg);
+    background-repeat: repeat repeat repeat none;
+    background-size: 50% auto, auto , auto, cover;
+    /* background-size: 100%; */
+    
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+
+    padding: 0 10%;
 
 }
 
@@ -31,6 +48,7 @@
     height: 300px;
     font-family: julius_sans_one;
     color: #ffffffA6;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +59,16 @@
     grid-column: 1 / 5;
     grid-row: 2 ;
     height: 900px;
+
+    justify-content: center;
+    align-items: start;
+
+    padding-left: 168px;
+    padding-top: 52px;
+    padding-right: 84px;
+    padding-bottom: 16px;
+
+    display: inline-block;
 }
 
 #mainMiddle {
@@ -51,6 +79,16 @@
     height: 685px;
     background-image: url(bamboo.png);
     background-attachment: fixed;
+
+    justify-content: center;
+    align-items: start;
+
+    padding-left: 168px;
+    padding-top: 64px;
+    padding-right: 638.398px;
+    padding-bottom: 16px;
+
+    display: inline-block;
 }
 
 #mainBottom {
@@ -92,4 +130,25 @@
     background-color: blanchedalmond;
     grid-column: 1 / -1;
     height: 175px ;
+}
+
+p {
+    margin: 12px 0;
+    line-height: 2;
+    font-size: 1em;
+}
+
+
+h1 {
+    font-size: 3.2em;
+    text-transform: uppercase;
+}
+
+h1::before {
+    background: url(enso.svg);
+    z-index: 5;
+}
+h3 {
+    font-family: julius_sans_one;
+    font-size: 1.8em;
 }

@@ -58,15 +58,10 @@ body {
     background-color: white;
     grid-column: 1 / 5;
     grid-row: 2 ;
-    height: 900px;
+    height: auto;
 
     justify-content: center;
     align-items: start;
-
-    padding-left: 168px;
-    padding-top: 52px;
-    padding-right: 84px;
-    padding-bottom: 16px;
 
     display: inline-block;
 }
@@ -76,26 +71,28 @@ body {
     grid-column: 1 / -1;
     grid-row: 3 / 4;
     z-index: 4;
-    height: 685px;
+    height: auto;
     background-image: url(bamboo.png);
     background-attachment: fixed;
 
     justify-content: center;
     align-items: start;
 
-    padding-left: 168px;
-    padding-top: 64px;
-    padding-right: 638.398px;
-    padding-bottom: 16px;
-
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
 }
 
 #mainBottom {
     background-color: white;
     grid-column: 1 / 5;
     grid-row: 4 / 5;
-    height: 725px;
+    height: auto;
+
+    justify-content: center;
+    align-items: start;
+
+    display: inline-block;
+
 }
 
 #navTop {
@@ -132,23 +129,89 @@ body {
     height: 175px ;
 }
 
+#summary {
+    padding: 52px 84px 16px 168px;
+}
+
+#preamble{
+    padding: 16px 84px 16px 168px;
+}
+
+#explanation {
+    padding: 16px 84px 64px 168px;
+}
+
+#participation {
+    padding: 64px 638px 16px 168px;
+}
+
+#benefits{
+    padding: 16px 638px 64px 168px;
+}
+
+#requirements {
+    padding: 64px 0 16px;
+    /* padding: 64px 84px 16px 168px; */
+}
+
+#headerRight > a {
+    color: white;
+    font-size: 1.5em;
+    font-weight: lighter;
+    text-decoration: none;
+    background: rgba(255,255,255,0.1);
+    color: #FFFFFFA6;
+    padding: .75em 3em;
+    font-weight: light;    
+}
+
+#headerRight > p {
+    color: white;
+    font-size: 4em;
+    font-weight: lighter;
+    text-decoration: none;
+    background: rgba(255,255,255,0.1);
+    color: #FFFFFFA6;
+    font-weight: bolder;
+    margin: .1em;
+    height: 2em;
+}
+
+#requirements > h3 {
+    padding: 0 84px 0 168px;
+}
+
+#requirements > p {
+    padding: 16px 84px 0 168px;
+    margin: 0;
+}
+
+#requirements > p:nth-child(5) {
+    padding: 16px 84px 64px 168px;
+}
+
 p {
-    margin: 12px 0;
+    margin: 12px 0 0;
     line-height: 2;
     font-size: 1em;
 }
 
-
 h1 {
     font-size: 3.2em;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-weight: lighter;
 }
 
-h1::before {
-    background: url(enso.svg);
-    z-index: 5;
-}
 h3 {
     font-family: julius_sans_one;
     font-size: 1.8em;
+    font-weight: lighter;
+    margin: 0;
 }
+
+#mainTop > p > a {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #809b7e;
+}
+

@@ -1,0 +1,106 @@
+.mobileHeader {
+    grid-row: 1 / 2;
+    background-image: url(contours@2x.png), url(noise.png), url(gridlines.png), url(huntington.jpg);
+
+}
+
+#mainTop {
+    grid-row: 2 / 3;
+    width: 80%;
+}
+
+#mainMiddle {
+    grid-row: 3 / 4;
+    background-color: #8ABC9F80;
+    z-index: 4;
+    height: auto;
+    background-image: url(bamboo.png);
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+}
+
+#mainBottom {
+    grid-row: 4 / 5;
+}
+
+#footerTop {
+    background-image:  url(contours@2x.png), url(gridlines.png), url(noise.png), url(koi.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    grid-row: 5 / 6;
+}
+
+#footerBottom {
+    grid-row: 6 / 7;
+    background-color: #134347;
+    grid-column: 1 / -1;
+    height: auto;
+    padding: 48px 168px;
+    text-align: center;
+    
+}
+
+#footerBottom a {
+    font-family: verde_moderna;
+    color: white;
+    font-size: 4.9em;
+    text-decoration: none;
+    margin: 48px;
+}
+
+#navTop {
+    background-color: #edf4f0;
+    grid-row: 7 / 8;
+    height: auto;
+    display: inline-block;
+}
+
+#navTop ul {
+    list-style: none;
+    font-family: libra_baskerville-italic;
+    color: #C0CAC3;
+}
+
+#navtop a {
+    font-family: julius_sans_one;
+    color: #607476;
+    font-size: 1.3em;
+    display: block;
+    margin: 0 0 5px;
+}
+
+#navTop a:nth-child(2){
+    display: inline-block;
+    font-family: libre_baskerville_reg;
+    color: #616857;
+    font-size: .9em;
+    margin: 0;
+}
+
+#navMiddle {
+    grid-row: 8 / 9;
+    background-color: #8ABC9F80;
+    z-index: 4;
+    background-image: url(bamboo.png);
+    background-attachment: fixed;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#navMiddle ul {
+    font-family: julius_sans_one;
+    font-size: 1.3em;
+    display: block;
+    list-style: none;
+}
+
+#navMiddle li {
+    text-decoration: none;
+    padding: 24px 0 20px;
+    border-top: solid 1px #a0b9ad;
+}

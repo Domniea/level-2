@@ -1,0 +1,92 @@
+{
+  "menu": 
+    {
+        "appetizers": [
+            {
+                "name" : "nachos",
+                "ingredients" : ["chipos", "sour-cream", "olives", "peppers", "onions", "cheese", "avocado"],
+                "description" : "a tasty mixes of ingredients, mixed up on large plate of house made tortilla chips. smothered with a melted three cheese blend."
+            },
+            {
+                "name" : "roasted brussel sprouts",
+                "ingredients" : ["brussel sprouts", "parmesan", "sage", "lemon"],
+                "description" : "halved and roasted brussel sprouts topped with parm and lemon zest"
+            },
+            {
+                "name" : "wings",
+                "ingredients" : ["chicken wings", "sauces", "carrot", "celery"],
+                "description" : "lightly breaded chicken wings, tossed in your choice of available sauces"   
+            }
+        ],
+        "cold-sandwhiches": [
+            {
+                "name" : "italian sub",
+                "ingredients" : ["sourdough roll", "provolone", "pepperoni", "capicola", "ham", "lTO", "mayo", "mustard"],
+                "description" : "run of the mill italian sub"   
+            },
+            {
+                "name" : "blt",
+                "ingredients" : ["bacon", "lettuce", "tomato", "white bread"],
+                "description" : "lightly toasted bread with bacon, lettuce, and tomato. all ingredients tripple stacked"   
+            },
+            {
+                "name" : "pb & j",
+                "ingredients" : ["peanut butter", "berry jelly", "brioche"],
+                "description" : "one hell of a clasic pb & j"   
+            }
+        ],
+        "hot-sandwhiches": [
+            {
+                "name" : "philly",
+                "ingredients" : ["sliced beef", "cheese-wiz", " provolone", "sourdough roll", "mayo"],
+                "description" : "best philly west of philly"   
+            },
+            {
+                "name" : "french dip",
+                "ingredients" : ["sliced beef", "provolone", "onions"],
+                "description" : "clasic french dip. better than arbys"   
+            },
+            {
+                "name" : "grilled cheese",
+                "ingredients" : ["provolone", "chedder", "mozzarella", "smoked gouda", "tomato"],
+                "description" : "grilled chese with tomato. double stacked"   
+            }
+        ],
+        "desserts": [
+            {
+                "name" : "cheescake",
+                "ingredients" : ["eggs", "creamcheese", "vanilla", "sugar"],
+                "description" : " new york style"   
+            },
+            {
+                "name" : "flan",
+                "ingredients" : ["eggs", "sugar", "condensed milk"],
+                "description" : "it's flan, what else is there to know"   
+            },
+            {
+                "name" : "icecream",
+                "ingredients" : ["assorted flavors", "cream", "sugar"],
+                "description" : "assorted flavors"   
+            }
+        ],
+        "drinks": [
+            {
+                "name" : "tea",
+                "ingredients" : ["tea leaves"],
+                "description" : "sun brewed"   
+            },
+            {
+                "name" : "soda",
+                "ingredients" : ["assorted flavors"],
+                "description" : "bubbly"   
+            },
+            {
+                "name" : "water",
+                "ingredients" : ["h2o"],
+                "description" : "its good for you"   
+            }
+        ]
+    } 
+
+}
+

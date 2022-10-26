@@ -96,7 +96,7 @@ form.addEventListener('submit', function(e){
             imageDisplay.src = response.data.imgUrl
             h2.appendChild(imageDisplay)
 
-            /* Add delete Button*/
+            /* Add delete Button*///
             const button = document.createElement('button')
             button.textContent = 'delete'
             newToDo.appendChild(button)

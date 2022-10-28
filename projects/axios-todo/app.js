@@ -8,6 +8,62 @@ const leftDisplay = document.getElementById('leftDisplay')
 const mainDisplay = document.getElementById('mainDisplay')
 const rightDisplay = document.getElementById('rightDisplay')
 
+function addToBrowser(location,info) {
+    const h2 = document.createElement('h2')
+    h2.textContent = info.data.title 
+    location.appendChild(h2)
+
+    const h4 = document.createElement('h4')
+    h4.textContent = info.data.description 
+    location.appendChild(h4)
+
+    const priceDisplay = document.createElement('h4')
+    priceDisplay.textContent = info.data.price 
+    
+    location.appendChild(priceDisplay)
+
+    const imageDisplay = document.createElement('img')
+    imageDisplay.classList.add('images')
+    imageDisplay.src = info.data.imgUrl
+    location.appendChild(imageDisplay)
+}
+
+/*function checkbox(location) {
+    const checkbox = document.createElement('input')
+    checkbox.setAttribute('type', 'checkbox')
+    checkbox.classList.add('checkbox')
+    location.appendChild(checkbox)
+
+    const checkboxLabel = document.createElement('h4')
+    checkboxLabel.classList.add('checkbox')
+    checkboxLabel.textContent = 'Completed?'
+    location.appendChild(checkboxLabel)
+    
+}*/
+
+function checkComplete(object, id) {
+    object.addEventListener('click',function(){
+        if(object.checked === true) {
+            axios.put('https://api.vschool.io/domniea/todo/' + id, {completed: true})
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
+            console.log("It's Checked")
+        } else {
+            axios.put('https://api.vschool.io/domniea/todo/' + id, {completed: false})
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
+            console.log('Not Checked')
+        }
+    })
+}
+
+
+// function checkboxAction(checkbox) {
+//     if (checkbox.checked) {
+//         console.log("It's Checked")
+//     }
+// }
+
 function deleteButton(location, id){
     const button = document.createElement('button')
     button.textContent = 'delete'
@@ -23,7 +79,6 @@ function deleteButton(location, id){
     })
 }
 
-
 function editButton(location, id){
     const button = document.createElement('button')
     button.textContent = 'edit'
@@ -31,11 +86,14 @@ function editButton(location, id){
 
     button.addEventListener('click', function editToDo(e) {
         e.preventDefault()
-        axios.put('https://api.vschool.io/domniea/todo/' + id, {
-                title: title.value,
-                description: description.value,
-                price: price.value,
-                imgUrl: image.value
+        updatePut()
+        console.log(updates)
+        axios.put('https://api.vschool.io/domniea/todo/' + id, 
+            {
+                "title": title.value,
+                "description": description.value,
+                "price": price.value,
+                "imgUrl": image.value
         })
             .then(response => {
                 rightDisplay.removeChild(location)
@@ -47,16 +105,12 @@ function editButton(location, id){
             addToBrowser(newToDo, response)
             deleteButton(newToDo, id)
             editButton(newToDo, id)
+            form.reset()
 
             })
             .catch(error => console.log(error))
     })
 }
-
-// axios.put('https://api.vschool.io/domniea/todo', {})
-//     .then()
-//     .catch()
-
 
 axios.get('https://api.vschool.io/domniea/todo')
     .then(response => {
@@ -65,31 +119,47 @@ axios.get('https://api.vschool.io/domniea/todo')
             newToDo.classList.add('toDo')
             rightDisplay.append(newToDo)
 
+            // checkbox(newToDo)
+            const checkbox = document.createElement('input')
+            checkbox.setAttribute('type', 'checkbox')
+            checkbox.classList.add('checkbox')
+            newToDo.appendChild(checkbox)
+
+            const checkboxLabel = document.createElement('h4')
+            checkboxLabel.classList.add('checkbox')
+            checkboxLabel.textContent = 'Completed?'
+            newToDo.appendChild(checkboxLabel)
+            if (response.data[i].completed === true){
+                checkbox.checked = true
+            }
+            
             const h2 = document.createElement('h2')
-            const title = response.data[i].title 
-            h2.textContent = `${title}`
+            h2.classList.add('task')
+            h2.textContent = response.data[i].title 
             newToDo.appendChild(h2)
             
             const h4 = document.createElement('h4')
-            const description = response.data[i].description 
-            h4.textContent = `Description: ${description}`
+            h4.classList.add('task')
+            h4.textContent = response.data[i].description 
             newToDo.appendChild(h4)
 
             const priceDisplay = document.createElement('h4')
-            const price = response.data[i].price 
-            priceDisplay.textContent = `Price: ${price} test`
+            priceDisplay.classList.add('task')
+            priceDisplay.textContent = response.data[i].price 
+            
             newToDo.appendChild(priceDisplay)
             
             if(response.data[i].imgUrl > "") {
-            const imageDisplay = document.createElement('img')
-            imageDisplay.classList.add('images')
-            imageDisplay.src = response.data[i].imgUrl
-            newToDo.appendChild(imageDisplay)
+            const image = document.createElement('img')
+            image.classList.add('task', 'images')
+            image.src = response.data[i].imgUrl
+            newToDo.appendChild(image)
             }
-
+            
             const id = response.data[i]._id
             deleteButton(newToDo, id)
-            editButton(newToDo, id)        
+            editButton(newToDo, id)
+            checkComplete(checkbox, id)    
         }
         
     })
@@ -101,69 +171,36 @@ form.addEventListener('submit', function(e){
     h1.textContent = title.value
     document.body.appendChild(h1)
     axios.post('https://api.vschool.io/domniea/todo', {
-        title: title.value,
-        description: description.value,
-        price: price.value,
-        imgUrl: image.value
+        "title": title.value,
+        "description": description.value,
+        "price": price.value,
+        "imgUrl": image.value
         })
         .then(response => {
             
-            /* Post to browser*/
         const newToDo = document.createElement('div')
         newToDo.classList.add('toDo')
         rightDisplay.append(newToDo)
+        
+        // checkbox(newToDo)
+        const checkbox = document.createElement('input')
+        checkbox.setAttribute('type', 'checkbox')
+        checkbox.classList.add('checkbox')
+        newToDo.appendChild(checkbox)
 
-        // const h2 = document.createElement('h2')
-        // const title = response.data.title 
-        // h2.textContent = `${title}`
-        // newToDo.appendChild(h2)
-    
-        // const h4 = document.createElement('h4')
-        // const description = response.data.description 
-        // h4.textContent = `Description: ${description}`
-        // newToDo.appendChild(h4)
-
-        // const priceDisplay = document.createElement('h4')
-        // const price = response.data.price 
-        // priceDisplay.textContent = `Price: ${price} test`
-        // newToDo.appendChild(priceDisplay)
-
-        // const imageDisplay = document.createElement('img')
-        // imageDisplay.classList.add('images')
-        // imageDisplay.src = response.data.imgUrl
-        // newToDo.appendChild(imageDisplay)
+        const checkboxLabel = document.createElement('h4')
+        checkboxLabel.classList.add('checkbox')
+        checkboxLabel.textContent = 'Completed?'
+        newToDo.appendChild(checkboxLabel)
 
         addToBrowser(newToDo, response)
         const id = response.data._id
         deleteButton(newToDo, id)
         editButton(newToDo, id)
+        checkComplete(checkbox, id) 
+        form.reset()
 
         })
         .catch(error => console.log(error))   
     })
 
-function addToBrowser(location,info) {
-    // const newToDo = document.createElement('div')
-    // newToDo.classList.add('toDo')
-    // rightDisplay.append(newToDo)
-
-    const h2 = document.createElement('h2')
-    const title = info.data.title 
-    h2.textContent = `${title}`
-    location.appendChild(h2)
-
-    const h4 = document.createElement('h4')
-    const description = info.data.description 
-    h4.textContent = `Description: ${description}`
-    location.appendChild(h4)
-
-    const priceDisplay = document.createElement('h4')
-    const price = info.data.price 
-    priceDisplay.textContent = `Price: ${price} test`
-    location.appendChild(priceDisplay)
-
-    const imageDisplay = document.createElement('img')
-    imageDisplay.classList.add('images')
-    imageDisplay.src = info.data.imgUrl
-    location.appendChild(imageDisplay)
-}

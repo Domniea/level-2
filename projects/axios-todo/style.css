@@ -68,6 +68,15 @@
     margin: 2%;
 }
 
+.todoList {
+    display: inline-block;
+}
+
+.task.toDoList {
+    margin: 0;
+    display: inline-block;
+}
+
 .images {
     max-height: 80px;
     max-width: 80px;

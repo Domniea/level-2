@@ -12,21 +12,26 @@
     <body>
         <div id="container">
 
-            <header id="header">header
+            <header id="header">
+                <h1 id="headerMain">HTTP request using AXIOS</h1>
+                <h2 id="headerSub">TO DO List</h2>
             </header>
 
             <div id="leftDisplay">
                 <form action="toDo" id="toDoForm" name="form">
-                    <label for="title">title</label> <input type="text" id="newTitle" name="title" placeholder="required">
-                    <label for="description">description</label><input type="text" id="newDescription" name="description">
-                    <label for="price">price</label><input type="text" id="newPrice" name="price">
-                    <label for="img">image</label><input type="text" id="newImage" name="image">
-                    <button id="button" >submit</button>
+                    <label for="title"><h3>Title</h3></label> <input type="text" id="newTitle" name="title" placeholder="required">
+                    <label for="description"><h3>Description</h3></label><input type="text" id="newDescription" name="description">
+                    <label for="price"><h3>Price</h3></label><input type="text" id="newPrice" name="price" placeholder="number">
+                    <label for="img"><h3>Image</h3></label><input type="text" id="newImage" name="image">
+                    <button id="button" >Submit</button>
                 </form>
+
+                <img src="checkboxImg.png" alt="" id="checkboxImg">
 
             </div>   
             
-            <div id="mainDisplay">COMPLETED
+            <div id="mainDisplay">
+                <h1 id="mainDispHeader">Complete?</h1>
                 
             </div>
 

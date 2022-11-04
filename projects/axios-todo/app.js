@@ -20,7 +20,7 @@ function addToBrowser(location,info) {
     location.appendChild(h4)
 
     const priceDisplay = document.createElement('h4')
-    h4.classList.add('task')
+    priceDisplay.classList.add('task')
     priceDisplay.textContent = info.price 
     location.appendChild(priceDisplay)
             
@@ -57,7 +57,8 @@ function checkComplete(object, id) {
 
 function deleteButton(location1, location2, location3, location4, id){
     const button = document.createElement('button')
-    button.textContent = 'delete'
+    button.textContent = 'Delete'
+    button.classList.add('deleteButton')
     location1.appendChild(button)
 
     button.addEventListener('click', function deleteToDo(e) {
@@ -79,7 +80,8 @@ function deleteButton(location1, location2, location3, location4, id){
 
 function editButton(location1, location2, location3, location4, id){
     const button = document.createElement('button')
-    button.textContent = 'edit'
+    button.setAttribute('id', 'buttonEdit')
+    button.textContent = 'Edit'
     location1.appendChild(button)
 
     button.addEventListener('click', function editToDo(e) {

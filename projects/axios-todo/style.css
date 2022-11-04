@@ -1,6 +1,17 @@
 * {
     margin: 0;
     padding: 0;
+
+}
+
+@font-face {
+    font-family: marker;
+    src: url(Permanent_Marker/PermanentMarker-Regular.ttf);
+}
+
+@font-face {
+    font-family: caveat;
+    src: url(Caveat_Brush/CaveatBrush-Regular.ttf);
 }
 
 #container {
@@ -8,7 +19,8 @@
     width: 100vw;
     height: 100vh;
     grid-template-rows: 25% 1fr;
-    grid-template-columns: 25% 50% 25%
+    grid-template-columns: 25% 50% 25%;
+    font-family: caveat;
 
 }
 
@@ -23,6 +35,7 @@
     border: 1px solid;
     margin: 1% 10%;
     box-shadow: 5px 7px rgb(219, 219, 219);
+    font-family: marker;
     
 }
 
@@ -38,6 +51,7 @@
     align-items: center;
     background-color: white;
     margin-top: 5vh;
+    
 }
 
 #mainDisplay {
@@ -81,7 +95,7 @@ button {
     overflow: hidden;
     overflow-y: scroll;
     margin-left: -5vw;
-    margin-bottom: 20%;
+    margin-bottom: 15%;
     
 }
 
@@ -92,8 +106,9 @@ button {
 }
 
 #checkboxImg {
-    height: 20vh;
-    width: 20vh;
+    height: 15vh;
+    width: 15vh;
+    margin-top: 4vh;
    margin-left: 1vw;
 }
 

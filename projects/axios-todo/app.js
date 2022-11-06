@@ -32,25 +32,21 @@ function addToBrowser(location,info) {
         }
 }
 
-function addToMain(location, info) {
-    const h2 = document.createElement('h2')
-    h2.classList.add('toDoList')
-    h2.textContent = info.title
-    location.appendChild(h2)
-}
-
-function checkComplete(object, id) {
+function checkComplete(object, id, title) {
     object.addEventListener('click',function(){
         if(object.checked === true) {
             axios.put('https://api.vschool.io/domniea/todo/' + id, {completed: true})
             .then(response => console.log(response))
             .catch(error => console.log(error))
             console.log("It's Checked")
+            title.style.textDecoration = 'line-through'
+
         } else {
             axios.put('https://api.vschool.io/domniea/todo/' + id, {completed: false})
             .then(response => console.log(response))
             .catch(error => console.log(error))
             console.log('Not Checked')
+            title.style.textDecoration = 'none'
         }
     })
 }
@@ -141,6 +137,7 @@ form.addEventListener('submit', function(e){
             console.log(response)
             const data = response.data
             const id = data._id
+            const isComplete = data.completed
 
             const newToDo = document.createElement('div')
             newToDo.classList.add('toDo')
@@ -161,8 +158,18 @@ form.addEventListener('submit', function(e){
             }
             
             addToBrowser(newToDo, data)
-            addToMain(toDoListItem, data)
-            checkComplete(checkbox, id)
+
+            const h2 = document.createElement('h2')
+            h2.classList.add('toDoList', 'mainListTitle')
+            h2.textContent = data.title
+            toDoListItem.appendChild(h2)
+
+            if(isComplete === true) {
+                console.log(h2)
+                h2.style.textDecoration = 'line-through'
+            }
+
+            checkComplete(checkbox, id, h2)
             editButton(newToDo, rightList, toDoListItem, mainList, id)
             deleteButton(newToDo, rightList, toDoListItem, mainList, id)
 
@@ -188,6 +195,8 @@ function dataRefresh(){
             data.forEach(data => {
 
             const id = data._id
+            const isComplete = data.completed
+            
 
             const newToDo = document.createElement('div')
             newToDo.classList.add('toDo')
@@ -202,18 +211,27 @@ function dataRefresh(){
             checkbox.setAttribute('type', 'checkbox')
             checkbox.classList.add('checkbox')
             toDoListItem.appendChild(checkbox)
-        
+
+            const h2 = document.createElement('h2')
+            h2.classList.add('toDoList')
+            h2.textContent = data.title
+            toDoListItem.appendChild(h2)
+
+            if(isComplete === true) {
+                console.log(h2)
+                h2.style.textDecoration = 'line-through'
+            }
+
+            checkComplete(checkbox, id, h2)
+
+            addToBrowser(newToDo, data)
+            editButton(newToDo, rightList,toDoListItem, mainList, id)
+            deleteButton(newToDo, rightList, toDoListItem, mainList, id)
+            
             if( data.completed === true) {
                 checkbox.checked = true
             }
             
-
-            addToBrowser(newToDo, data)
-            addToMain(toDoListItem, data)
-            checkComplete(checkbox, id)
-            editButton(newToDo, rightList,toDoListItem, mainList, id)
-            deleteButton(newToDo, rightList, toDoListItem, mainList, id)
-
             form.reset()
         })
     })
